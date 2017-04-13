@@ -1,22 +1,13 @@
-from django.views.generic.edit import CreateView
-from cfp.models import Proposal
+from cfp.forms import ProposalForm
+from django.shortcuts import render
 
-class ProposalCreate(CreateView):
-    model = Proposal
-    template_name = 'cfp.html'
-    fields = ['first_name', 
-              'last_name',
-              'email',
-              'profile_link',
-              'phone',
-              'monthly_talk', 
-              'category',
-              'speaker_bio',
-             'talk_title',
-             'audience_level',
-             'description',
-             'abstract',
-             'outcomes',
-             'talk_history',
-             'file_submission',
-             'prior_talks']
+
+def proposal_create(request):
+    if request.method == 'GET':
+        form = ProposalForm()
+    elif request.method == 'POST':
+        import ipdb; ipdb.set_trace()
+
+    return render(request, 'cfp.html', {
+        'form': form
+    })

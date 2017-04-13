@@ -16,12 +16,12 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.views.generic import TemplateView
-from cfp.views import ProposalCreate
+from cfp.views import proposal_create
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^cfp($|/)', ProposalCreate.as_view(success_url='/'), name="cfp"),
+    url(r'^cfp', proposal_create, name="cfp"),
     url(r'^$', TemplateView.as_view(template_name='index.html'), name="main"),
     url(r'^sponsor/$', TemplateView.as_view(template_name='sponsor.html'), name="sponsor"),
 ]
