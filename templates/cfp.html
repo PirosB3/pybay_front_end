@@ -1,390 +1,313 @@
 {% extends 'base.html' %}
+
+{% load bootstrap_tags %}
 {% load static %}
 
 {% block content %}
-        <!-- Info Section Start-->
-        <!--Event Focus Starts -->
-        <a id="about" class="in-page-link"></a>
 
-			<section class="topics duplicatable-content">
-
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-12">
-							<h1 style="color: #428bca;"><b><em>Guidelines</em></b></h1>
-						</div>
-					</div><!--end of row-->
-
-					<div class="row">
-						<div class="col-md-4 col-sm-6">
-							<div class="topic">
-								<i class="pe-7s-info" style="color: #FBBD4A;"></i>
-								<h2 style="color: #428bca;"><em>Info</em></h2>
-								<p class="lead">
-                                    <p>PyBay is a developer-centric conference, focused primarily but not exclusively on the Python language. We're primarily seeking technical talks, though talks on process and other topics relevant to the community will be considered. </p>
-									<p>Talks are 40 minutes</p>
-                                    <p>Call For Proposals opens: May 30th</p>
-                                    <p>Call For Proposals ends: June 24th (at 11.59pm PST)
-                                    <p>Speakers notified by: June 27th</p>
-								</p>
-
-							</div>
-						</div><div class="col-md-4 col-sm-6">
-							<div class="topic">
-								<i class="pe-7s-help1 icon-large"></i>
-								<h3><em>Proposal Guidelines</em></h3>
-								<p class="lead">
-									<p>You may submit up to 3 proposals.</p>
-
-                                    <p>The title, description, and abstract should sell your talk to attendees and reviewers.
-                                    They should answer the questions:
-                                    Why should I attend this talk?
-                                    What will I learn?
-                                    What makes this a compelling talk?</p>
-
-                                    <p>Please select the best fit for the category and level fields below. Your talk may cover content that spans more than one category, but please choose the one that best describes its primary focus. The "/etc" category is for talks whose primary focus does not fit under the others.</p>
-								</p>
-
-							</div>
-						</div>
-                        <div class="col-md-4 col-sm-6">
-							<div class="topic">
-								<i class="pe-7s-search icon-large"></i>
-								<h3><em>Talk Selection&nbsp;</em></h3>
-								<p class="lead">
-									<p>The first phase of selection is blind -- we'll only consider talk information, and not speaker information. In the second phase of selection, we'll consider speaker information if needed.</p>
-                                    <p>Our goal is to determine the program largely by talk content while still ensuring a diversity of talks and speakers.</p>
-								</p>
-
-							</div>
-						</div><!--end of individual topic-->
-
-						<!--end of individual topic-->
-
-						<!--end of individual topic-->
-					</div><!--end of row-->
-
-				</div><!--end of container-->
-
-			</section>
-        <!--Event Focus Ends -->
-        <!-- Info Section End -->
-
-
-		<!-- Forms Start -->
-		 <div class="container">
-
-    		<form class="well form-horizontal" action="" method="post"  id="contact_form">{% csrf_token %}
-			<fieldset>
-
-				<!-- Form Name -->
-				<legend>Call For Proposals</legend>
-
-					<!-- Text input START-->
-					<div class="form-group">
-						<label class="col-md-4 control-label">First Name</label>
-						<div class="col-md-4 inputGroupContainer">
-						<div class="input-group">
-							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            {{ form.first_name }}
-						</div>
-						</div>
-					</div>
-					<!-- Text input END-->
-
-					<!-- Text input START-->
-					<div class="form-group">
-				  		<label class="col-md-4 control-label" >Last Name</label>
-				   	 	<div class="col-md-4 inputGroupContainer">
-				   		<div class="input-group">
-				  			<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                            {{ form.last_name }}
-				    	</div>
-				  		</div>
-					</div>
-					<!-- Text input END-->
-
-					<!-- Text input START -->
-					<div class="form-group">
-						<label class="col-md-4 control-label">E-Mail</label>
-						<div class="col-md-4 inputGroupContainer">
-						<div class="input-group">
-							<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-							{{ form.email }}
-						</div>
-						</div>
-					</div>
-					<!-- Text input END-->
-
-					<!-- Text input START -->
-					<div class="form-group">
-  						<label class="col-md-4 control-label">Website </label>
-   						<div class="col-md-4 inputGroupContainer">
-    					<div class="input-group">
-        					<span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-  							{{ form.profile_link }}
-   						 </div>
-  						</div>
-					</div>
-					<!-- Text input END-->
-
-					<!-- Text input START -->
-					<div class="form-group">
-						<label class="col-md-4 control-label">Phone #</label>
-					    <div class="col-md-4 inputGroupContainer">
-					    <div class="input-group">
-					        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-					  		{{ form.phone }}
-					    </div>
-					  	</div>
-					</div>
-					<!-- Text input END-->
-
-					<!-- Select input Start -->
-					<div class="form-group">
-					  <label class="col-md-4 control-label">Category</label>
-					    <div class="col-md-4 selectContainer">
-					    <div class="input-group">
-					        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-                        {{ form.category }}
-				 	</div>
-						</div>
-					</div>
-					<!-- Select input END -->
-
-					<!-- Radio Button Start -->
- 					<div class="form-group">
-                    	<label class="col-md-4 control-label">Audience Level</label>
-                        <div class="col-md-4">
-                            <div class="radio">
-                                
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="hosting" value="Intermediate" /> Intermediate
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="hosting" value="Advanced" /> Advanced
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-					<!-- Radio Button End -->
-                    <!-- Radio Button Start -->
- 					<div class="form-group">
-                    	<label class="col-md-4 control-label">Are you open to giving your talk at a monthly SF Python Meetup if we can't fit your talk into PyBay's program?</label>
-                        <div class="col-md-4">
-                            <div class="radio">
-                                {% for radio in models.audience_level %}
-                                <div class="radio">
-                                    {{ radio }}
-                                </div>
-                                {% endfor %}
-                            </div>
-                            <div class="radio">
-                                <label>
-                                   
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-					<!-- Radio Button End -->
-
-					<!-- Text input START -->
-					<div class="form-group">
-  						<label class="col-md-4 control-label">Speaker Bio</label>
-					    <div class="col-md-4 inputGroupContainer">
-					    <div class="input-group">
-					        <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-					       	{{ form.speaker_bio }}
-					  	</div>
-					  	</div>
-					</div>
-					<!-- Text input END-->
-
-					<!-- Text input START -->
-					<div class="form-group">
-  						<label class="col-md-4 control-label">Talk Title</label>
-					    <div class="col-md-4 inputGroupContainer">
-					    <div class="input-group">
-					        <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-					       	{{ form.talk_title }}
-					  	</div>
-					  	</div>
-					</div>
-					<!-- Text input END-->
-
-					<!-- Text input START -->
-					<div class="form-group">
-  						<label class="col-md-4 control-label">Description</label>
-					    <div class="col-md-4 inputGroupContainer">
-					    <div class="input-group">
-					        <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-					       	{{ form.description }}
-					  	</div>
-					  	</div>
-					</div>
-					<!-- Text input END-->
-
-					<!-- Text input START -->
-					<div class="form-group">
-  						<label class="col-md-4 control-label">Abstract</label>
-					    <div class="col-md-4 inputGroupContainer">
-					    <div class="input-group">
-					        <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-					       	{{ form.abstract }}
-					  	</div>
-					  	</div>
-					</div>
-					<!-- Text input END-->
-
-					<!-- Text input START -->
-					<div class="form-group">
-  						<label class="col-md-4 control-label">What will attendes learn?</label>
-					    <div class="col-md-4 inputGroupContainer">
-					    <div class="input-group">
-					        <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-					       	{{ form.outcomes }}
-					  	</div>
-					  	</div>
-					</div>
-					<!-- Text input END-->
-                
-                    <!-- Text input START -->
-					<div class="form-group">
-  						<label class="col-md-4 control-label">Speaker and talk History</label>
-					    <div class="col-md-4 inputGroupContainer">
-					    <div class="input-group">
-					        <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-					       	{{ form.talk_history}}
-					  	</div>
-					  	</div>
-					</div>
-					<!-- Text input END-->
-
-					<!-- Text input START -->
-					<div class="form-group">
-  						<label class="col-md-4 control-label">Links to Past Talks</label>
-					    <div class="col-md-4 inputGroupContainer">
-					    <div class="input-group">
-					        <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
-					       	{{ form.prior_talks }}
-					  	</div>
-					  	</div>
-					</div>
-					<!-- Text input END-->
-                
-                    <!-- Text input START -->
-					<div class="form-group">
-  						<label class="col-md-4 control-label">Slides to past talks or current submission</label>
-					    <div class="col-md-4 inputGroupContainer">
-					    <div class="input-group">
-					        <span class="input-group-addon"><i class="glyphicon glyphicon-upload"></i></span>
-					       	{{ form.file_submission }}
-					  	</div>
-					  	</div>
-					</div>
-					<!-- Text input END-->
-                
-					<!-- Submit Button Start -->
-					<div class="form-group">
-						<label class="col-md-4 control-label"></label>
-						<div class="col-md-4">
-							<button type="submit" class="btn btn-warning">Send <span class="glyphicon glyphicon-send"></span> </button>
-						</div>
-					</div>
-					<!-- Submit Button End -->
-
-
-			</fieldset>
-			</form>
-		</div>
-
-		<!-- Forms End -->
-
-        <!--Subscribe to stay tune Starts -->
-        <section class="subscribe-2">
-
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-12 text-center">
-							<i class="icon pe-7s-pen"></i>
-							<i class="icon pe-7s-mail-open-file"></i>
-							<i class="icon pe-7s-paper-plane"></i>
-							<h1 class="large-h1">Subscribe to stay informed</h1>
-						</div>
-					</div><!--end of row-->
-
-					<div class="row">
-						<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-							<form class="email-subscribe mail-list-signup">
-								<div class="col-sm-7">
-									<input class="form-email signup-email-field" type="text" placeholder="Enter your email address">
-								</div>
-
-								<div class="col-sm-5">
-									<input class="btn" type="submit" value="Subscribe">
-								</div>
-
-								<div class="col-sm-12 text-center">
-									<span>*We never share your email with 3rd parties</span>
-								</div>
-								<iframe class="mail-list-form" srcdoc="">
-								</iframe>
-							</form>
-						</div>
-					</div><!--end of row-->
-				</div><!--end of container-->
-
-			</section>
-        <!--Subsribe to stay Tune Ends -->
+    <!-- Info Section Start-->
+    <!--Event Focus Starts -->
+    <a id="about" class="in-page-link"></a>
+    <section class="topics duplicatable-content">
+       <div class="container">
+          <div class="row">
+             <div class="col-sm-12">
+                <h1 style="color: #428bca;"><b><em>Guidelines</em></b></h1>
+             </div>
+          </div>
+          <!--end of row-->
+          <div class="row">
+             <div class="col-md-4 col-sm-6">
+                <div class="topic">
+                   <i class="pe-7s-info" style="color: #FBBD4A;"></i>
+                   <h2 style="color: #428bca;"><em>Info</em></h2>
+                   <p class="lead">
+                   <p>PyBay is a developer-centric conference, focused primarily but not exclusively on the Python language. We're primarily seeking technical talks, though talks on process and other topics relevant to the community will be considered. </p>
+                   <p>Talks are 40 minutes</p>
+                   <p>Call For Proposals opens: May 30th</p>
+                   <p>Call For Proposals ends: June 24th (at 11.59pm PST)
+                   <p>Speakers notified by: June 27th</p>
+                   </p>
+                </div>
+             </div>
+             <div class="col-md-4 col-sm-6">
+                <div class="topic">
+                   <i class="pe-7s-help1 icon-large"></i>
+                   <h3><em>Proposal Guidelines</em></h3>
+                   <p class="lead">
+                   <p>You may submit up to 3 proposals.</p>
+                   <p>The title, description, and abstract should sell your talk to attendees and reviewers.
+                      They should answer the questions:
+                      Why should I attend this talk?
+                      What will I learn?
+                      What makes this a compelling talk?
+                   </p>
+                   <p>Please select the best fit for the category and level fields below. Your talk may cover content that spans more than one category, but please choose the one that best describes its primary focus. The "/etc" category is for talks whose primary focus does not fit under the others.</p>
+                   </p>
+                </div>
+             </div>
+             <div class="col-md-4 col-sm-6">
+                <div class="topic">
+                   <i class="pe-7s-search icon-large"></i>
+                   <h3><em>Talk Selection&nbsp;</em></h3>
+                   <p class="lead">
+                   <p>The first phase of selection is blind -- we'll only consider talk information, and not speaker information. In the second phase of selection, we'll consider speaker information if needed.</p>
+                   <p>Our goal is to determine the program largely by talk content while still ensuring a diversity of talks and speakers.</p>
+                   </p>
+                </div>
+             </div>
+             <!--end of individual topic-->
+             <!--end of individual topic-->
+             <!--end of individual topic-->
+          </div>
+          <!--end of row-->
+       </div>
+       <!--end of container-->
+    </section>
+    <!--Event Focus Ends -->
+    <!-- Info Section End -->
+    <!-- Forms Start -->
+    <div class="container">
+       <form class="well form-horizontal" action="{% url 'cfp' %}" method="post"  id="contact_form">
+          {% csrf_token %}
+          <fieldset>
+             <!-- Form Name -->
+             <legend>Call For Proposals</legend>
+             <!-- Text input START-->
+             <div class="form-group">
+                <label class="col-md-4 control-label">First Name</label>
+                <div class="col-md-4 inputGroupContainer">
+                   <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                      {{ form.first_name }}
+                   </div>
+                </div>
+             </div>
+             <!-- Text input END-->
+             <!-- Text input START-->
+             <div class="form-group">
+                <label class="col-md-4 control-label" >Last Name</label>
+                <div class="col-md-4 inputGroupContainer">
+                   <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                      {{ form.last_name }}
+                   </div>
+                </div>
+             </div>
+             <!-- Text input END-->
+             <!-- Text input START -->
+             <div class="form-group">
+                <label class="col-md-4 control-label">E-Mail</label>
+                <div class="col-md-4 inputGroupContainer">
+                   <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                      {{ form.email }}
+                   </div>
+                </div>
+             </div>
+             <!-- Text input END-->
+             <!-- Text input START -->
+             <div class="form-group">
+                <label class="col-md-4 control-label">Website </label>
+                <div class="col-md-4 inputGroupContainer">
+                   <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+                      {{ form.profile_link }}
+                   </div>
+                </div>
+             </div>
+             <!-- Text input END-->
+             <!-- Text input START -->
+             <div class="form-group">
+                <label class="col-md-4 control-label">Phone #</label>
+                <div class="col-md-4 inputGroupContainer">
+                   <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                      {{ form.phone }}
+                   </div>
+                </div>
+             </div>
+             <!-- Text input END-->
+             <!-- Select input Start -->
+             <div class="form-group">
+                <label class="col-md-4 control-label">Category</label>
+                <div class="col-md-4 selectContainer">
+                   <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                      {{ form.category }}
+                   </div>
+                </div>
+             </div>
+             <!-- Select input END -->
+             <!-- Radio Button Start -->
+             <div class="form-group">
+                <label class="col-md-4 control-label">Audience Level</label>
+                <div class="col-md-4">
+                   <div class="radio">
+                   </div>
+                   <div class="radio">
+                      <label>
+                      <input type="radio" name="audience_level" value="Intermediate" /> Intermediate
+                      </label>
+                   </div>
+                   <div class="radio">
+                      <label>
+                      <input type="radio" name="audience_level" value="Advanced" /> Advanced
+                      </label>
+                   </div>
+                </div>
+             </div>
+             <!-- Radio Button End -->
+             <!-- Radio Button Start -->
+             <div class="form-group">
+                <label class="col-md-4 control-label">Are you open to giving your talk at a monthly SF Python Meetup if we can't fit your talk into PyBay's program?</label>
+                <div class="col-md-4">
+                   <div class="radio">
+                      {% for radio in models.audience_level %}
+                      <div class="radio">
+                         {{ radio }}
+                      </div>
+                      {% endfor %}
+                   </div>
+                   <div class="radio">
+                      <label>
+                      </label>
+                   </div>
+                </div>
+             </div>
+             <!-- Radio Button End -->
+             <!-- Text input START -->
+             <div class="form-group">
+                <label class="col-md-4 control-label">Speaker Bio</label>
+                <div class="col-md-4 inputGroupContainer">
+                   <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                      {{ form.speaker_bio }}
+                   </div>
+                </div>
+             </div>
+             <!-- Text input END-->
+             <!-- Text input START -->
+             <div class="form-group">
+                <label class="col-md-4 control-label">Talk Title</label>
+                <div class="col-md-4 inputGroupContainer">
+                   <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                      {{ form.talk_title }}
+                   </div>
+                </div>
+             </div>
+             <!-- Text input END-->
+             <!-- Text input START -->
+             <div class="form-group">
+                <label class="col-md-4 control-label">Description</label>
+                <div class="col-md-4 inputGroupContainer">
+                   <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                      {{ form.description }}
+                   </div>
+                </div>
+             </div>
+             <!-- Text input END-->
+             <!-- Text input START -->
+             <div class="form-group">
+                <label class="col-md-4 control-label">Abstract</label>
+                <div class="col-md-4 inputGroupContainer">
+                   <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                      {{ form.abstract }}
+                   </div>
+                </div>
+             </div>
+             <!-- Text input END-->
+             <!-- Text input START -->
+             <div class="form-group">
+                <label class="col-md-4 control-label">What will attendes learn?</label>
+                <div class="col-md-4 inputGroupContainer">
+                   <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                      {{ form.outcomes }}
+                   </div>
+                </div>
+             </div>
+             <!-- Text input END-->
+             <!-- Text input START -->
+             <div class="form-group">
+                <label class="col-md-4 control-label">Speaker and talk History</label>
+                <div class="col-md-4 inputGroupContainer">
+                   <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                      {{ form.talk_history}}
+                   </div>
+                </div>
+             </div>
+             <!-- Text input END-->
+             <!-- Text input START -->
+             <div class="form-group">
+                <label class="col-md-4 control-label">Links to Past Talks</label>
+                <div class="col-md-4 inputGroupContainer">
+                   <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+                      {{ form.prior_talks }}
+                   </div>
+                </div>
+             </div>
+             <!-- Text input END-->
+             <!-- Text input START -->
+             <div class="form-group">
+                <label class="col-md-4 control-label">Slides to past talks or current submission</label>
+                <div class="col-md-4 inputGroupContainer">
+                   <div class="input-group">
+                      <span class="input-group-addon"><i class="glyphicon glyphicon-upload"></i></span>
+                      {{ form.file_submission }}
+                   </div>
+                </div>
+             </div>
+             <!-- Text input END-->
+             <!-- Submit Button Start -->
+             <div class="form-group">
+                <label class="col-md-4 control-label"></label>
+                <div class="col-md-4">
+                   <button type="submit" class="btn btn-warning">Send <span class="glyphicon glyphicon-send"></span> </button>
+                </div>
+             </div>
+             <!-- Submit Button End -->
+          </fieldset>
+       </form>
+    </div>
+    <!-- Forms End -->
+    <!--Subscribe to stay tune Starts -->
+    <section class="subscribe-2">
+       <div class="container">
+          <div class="row">
+             <div class="col-sm-12 text-center">
+                <i class="icon pe-7s-pen"></i>
+                <i class="icon pe-7s-mail-open-file"></i>
+                <i class="icon pe-7s-paper-plane"></i>
+                <h1 class="large-h1">Subscribe to stay informed</h1>
+             </div>
+          </div>
+          <!--end of row-->
+          <div class="row">
+             <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                <form class="email-subscribe mail-list-signup">
+                   <div class="col-sm-7">
+                      <input class="form-email signup-email-field" type="text" placeholder="Enter your email address">
+                   </div>
+                   <div class="col-sm-5">
+                      <input class="btn" type="submit" value="Subscribe">
+                   </div>
+                   <div class="col-sm-12 text-center">
+                      <span>*We never share your email with 3rd parties</span>
+                   </div>
+                   <iframe class="mail-list-form" srcdoc="">
+                   </iframe>
+                </form>
+             </div>
+          </div>
+          <!--end of row-->
+       </div>
+       <!--end of container-->
+    </section>
+    <!--Subsribe to stay Tune Ends -->
 {% endblock content %}
-        <!--Footer Starts-->
-        <div class="footer-container">
-			<footer class="classic">
-				<div class="container">
-					<div class="row">
-						<div class="col-sm-3">
-							<ul class="menu">
-								<li><a href="#">Press</a></li>
-								<li><a href="#">Terms of service</a></li>
-								<li><a href="#">About</a></li>
-								<li><a href="#">Contact</a></li>
-								<li><a class="inner-link back-to-top" href="#top">Back To Top</a></li>
-							</ul>
-						</div>
-
-						<div class="col-sm-5">
-							<span class="lead color-heading">About PyBay</span>
-							<p>
-								SF Python is about building a stronger Dev Community in SF / Bay Area, one meeting at a time. It was started by Grace Law in Nov 2008 when 35 devs sat behind the desks of a 30ish people start up, ate pizza and listened to a Python Fundamentals talk by Wesley Chun.   Today, with the help of Simeon Franklin (Python Instructor at Twitter) and some faithful sponsors, we produce:2 monthly meetups, a holiday party and a yearly regional Python Conference.
-							</p>
-						</div>
-
-						<div class="col-sm-4">
-							<ul class="contact-methods">
-								<li><i class="icon pe-7s-mail"></i><span>hello@meetup.net</span></li>
-								<li><i class="icon pe-7s-phone"></i><span>1800 382 372</span></li>
-								<li><i class="icon pe-7s-map-marker"></i><span>San Francisco, CA</span></li>
-							</ul>
-						</div>
-					</div><!--end of row-->
-
-					<div class="row">
-						<div class="col-sm-12 text-center">
-							<ul class="social-profiles">
-								<li><a href="#"><i class="icon social_twitter"></i></a></li>
-								<li><a href="#"><i class="icon social_facebook"></i></a></li>
-								<li><a href="#"><i class="icon social_dribbble"></i></a></li>
-								<li><a href="#"><i class="icon social_instagram"></i></a></li>
-								<li><a href="#"><i class="icon social_googleplus"></i></a></li>
-							</ul>
-						</div>
-					</div><!--end of row-->
-				</div><!--end of container-->
-			</footer>
-		<!--Footer Ends -->
-
-
