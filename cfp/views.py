@@ -1,6 +1,8 @@
-from cfp.forms import ProposalForm
 from django.contrib import messages
+from django.core.urlresolvers import reverse
 from django.shortcuts import render, redirect
+
+from cfp.forms import ProposalForm
 
 
 def proposal_create(request):
@@ -20,7 +22,7 @@ def proposal_create(request):
         messages.add_message(request, messages.INFO,
                              "Thank you {}, Your Talk '{}' was submitted correctly. We will let you know on XXX".format(
                              model.first_name, model.talk_title))
-        return redirect('cfp')
+        return redirect(reverse('cfp') + "#form-container")
 
     else:
         return redirect('home')

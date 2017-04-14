@@ -67,7 +67,7 @@
     <!--Event Focus Ends -->
     <!-- Info Section End -->
     <!-- Forms Start -->
-    <div class="container">
+    <div class="container" id="form-container">
         {% if messages %}
           <ul>
           {% for message in messages %}
@@ -313,5 +313,13 @@
        </div>
        <!--end of container-->
     </section>
+
+    {% if form.errors %}
+        <script>
+              var el = document.getElementById("form-container");
+              el.scrollIntoView()
+        </script>
+    {% endif %}
+
     <!--Subsribe to stay Tune Ends -->
 {% endblock content %}
