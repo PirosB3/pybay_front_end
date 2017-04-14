@@ -5,7 +5,7 @@ class Proposal(models.Model):
     first_name = models.CharField(verbose_name="First Name", max_length=50)
     last_name = models.CharField(verbose_name="Last Name", max_length=50)
     email = models.EmailField(verbose_name="Email Adress", max_length=50)
-    profile_link = models.URLField(verbose_name="GitHub/Home Page", max_length=50)
+    profile_link = models.URLField(verbose_name="GitHub/Home Page", max_length=50, blank=True)
     phone = models.CharField(verbose_name="Phone Number", max_length=12)
     monthly_talk = models.BooleanField(verbose_name="Interest in monthly talk?", max_length=50)
     category = models.IntegerField(choices=
@@ -28,8 +28,8 @@ class Proposal(models.Model):
     abstract = models.TextField(max_length=1500)
     outcomes = models.TextField(verbose_name="Learning Outcomes", max_length=250)
     talk_history = models.TextField(verbose_name="Speaker and Talk History", max_length=250)
-    file_submission = models.FileField()
-    prior_talks = models.URLField(verbose_name="Links to previous talks", max_length=50)
+    file_submission = models.FileField(blank=True, null=True)
+    prior_talks = models.URLField(verbose_name="Links to previous talks", max_length=50, blank=True)
         
     
     def __str__(self):

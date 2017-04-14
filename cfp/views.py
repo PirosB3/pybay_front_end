@@ -1,13 +1,26 @@
 from cfp.forms import ProposalForm
-from django.shortcuts import render
+from django.contrib import messages
+from django.shortcuts import render, redirect
 
 
 def proposal_create(request):
     if request.method == 'GET':
-        form = ProposalForm()
-    elif request.method == 'POST':
-        import ipdb; ipdb.set_trace()
+        return render(request, 'cfp.html', {
+            'form': ProposalForm()
+        })
 
-    return render(request, 'cfp.html', {
-        'form': form
-    })
+    elif request.method == 'POST':
+        form = ProposalForm(request.POST)
+        if not form.is_valid():
+            return render(request, 'cfp.html', {
+                'form': form
+            })
+
+        model = form.save()
+        messages.add_message(request, messages.INFO,
+                             "Thank you {}, Your Talk '{}' was submitted correctly. We will let you know on XXX".format(
+                             model.first_name, model.talk_title))
+        return redirect('cfp')
+
+    else:
+        return redirect('home')
