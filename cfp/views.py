@@ -10,7 +10,7 @@ def proposal_create(request):
         })
 
     elif request.method == 'POST':
-        form = ProposalForm(request.POST)
+        form = ProposalForm(request.POST, request.FILES)
         if not form.is_valid():
             return render(request, 'cfp.html', {
                 'form': form
